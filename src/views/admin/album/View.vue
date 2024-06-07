@@ -34,21 +34,16 @@
                     <div class="text-sm text-gray-500">
                       <ul>
                         <li>ID: {{ album.id }}</li>
+                        <li>Name: {{ album.name }}</li>
                         <li>Number of Tracks: {{ album.number_of_tracks }}</li>
                         <li>Year: {{ album.year }}</li>
+                        <li>Album Art: <img :src="album.album_art" alt="Album Art" class="w-24 h-24"/></li>
+                        <!-- <li>Artist: {{ album.artist.name }}</li> -->
                         <li>Studio: {{ album.studio }}</li>
                         <li>Genre: {{ album.genre }}</li>
+                        <li>Sort Order: {{ album.sort_order }}</li>
                         <li>Status: {{ album.status ? 'Published' : 'Unpublished' }}</li>
-                        <li>Album Art: <img :src="album.album_art" alt="Album Art" class="w-24 h-24"/></li>
                       </ul>
-                      <div class="mt-4">
-                        <h4 class="text-sm font-semibold text-gray-900">Artist Details</h4>
-                        <ul>
-                          <li>ID: {{ album.artist.id }}</li>
-                          <li>Name: {{ album.artist.name }}</li>
-                          <li>Avatar: <img :src="album.artist.avatar" alt="Avatar" class="w-16 h-16 rounded-full"/></li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -71,14 +66,12 @@
     </Dialog>
   </TransitionRoot>
 </template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const open = ref(true)
-
 const router = useRouter()
 const route = useRoute()
 
@@ -87,7 +80,7 @@ const album = ref(null)
 // Fetch the album data from the API
 const fetchAlbum = async () => {
   try {
-    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/album/?id=${route.params.id}`)
+    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/artists/?id=${route.params.id}`)
     const data = await response.json()
     console.log('Fetched album data:', data.body) // Debugging line to check API response
     album.value = data.body[0] // Access the first element of the array

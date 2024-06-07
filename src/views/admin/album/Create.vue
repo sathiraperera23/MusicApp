@@ -25,7 +25,7 @@
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <DialogPanel class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-              <form v-on:submit.prevent="saveAlbum">
+              <form @submit.prevent="saveAlbum">
                 <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
                   <div class="sm:col-span-8">
                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
@@ -37,28 +37,28 @@
                   <div class="sm:col-span-8">
                     <label for="number_of_tracks" class="block text-sm font-medium leading-6 text-gray-900">Number of Tracks</label>
                     <div class="mt-2">
-                      <input type="text" name="number_of_tracks" id="number_of_tracks" v-model="album.number_of_tracks" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <input type="number" name="number_of_tracks" id="number_of_tracks" v-model="album.number_of_tracks" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
 
                   <div class="sm:col-span-8">
                     <label for="year" class="block text-sm font-medium leading-6 text-gray-900">Year</label>
                     <div class="mt-2">
-                      <input type="text" name="year" id="year" v-model="album.year" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <input type="number" name="year" id="year" v-model="album.year" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
 
                   <div class="sm:col-span-8">
                     <label for="album_art" class="block text-sm font-medium leading-6 text-gray-900">Album Art</label>
                     <div class="mt-2">
-                      <input type="file" name="album_art" id="album_art" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <input type="text" name="album_art" id="album_art" v-model="album.album_art" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
 
                   <div class="sm:col-span-8">
                     <label for="artist" class="block text-sm font-medium leading-6 text-gray-900">Artist</label>
                     <div class="mt-2">
-                      <input type="text" name="artist" id="artist" v-model="album.artist.id" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                      <input type="number" name="artist" id="artist" v-model="album.artist" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
 
@@ -89,7 +89,6 @@
     </Dialog>
   </TransitionRoot>
 </template>
-
 <script setup>
 import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
@@ -103,20 +102,16 @@ const album = ref({
   number_of_tracks: 0,
   year: '',
   album_art: '',
-  artist: {
-    id: 0,
-    name: '',
-    avatar: ''
-  },
+  artist: 0,
   studio: '',
   genre: '',
   sort_order: 0,
-  status: false
+  status: true
 })
 
 const saveAlbum = async () => {
   try {
-    const response = await fetch('https://your-api-endpoint.com/albums', {
+    const response = await fetch('https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/albums', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -131,15 +126,11 @@ const saveAlbum = async () => {
         number_of_tracks: 0,
         year: '',
         album_art: '',
-        artist: {
-          id: 0,
-          name: '',
-          avatar: ''
-        },
+        artist: 0,
         studio: '',
         genre: '',
         sort_order: 0,
-        status: false
+        status: true
       }
       // Route the user to the album list page
       router.push('/admin/album')

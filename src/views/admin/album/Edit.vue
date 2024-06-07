@@ -59,7 +59,115 @@
                           </div>
                         </div>
 
-                        <!-- Add other input fields as necessary -->
+                        <div class="sm:col-span-4">
+                          <label
+                            for="number_of_tracks"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Number of Tracks
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="number"
+                                name="number_of_tracks"
+                                id="number_of_tracks"
+                                v-model="artist.number_of_tracks"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                          <label
+                            for="year"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Year
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="number"
+                                name="year"
+                                id="year"
+                                v-model="artist.year"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                          <label
+                            for="album_art"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Album Art
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="text"
+                                name="album_art"
+                                id="album_art"
+                                v-model="artist.album_art"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                          <label
+                            for="artist_id"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Artist ID
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="number"
+                                name="artist_id"
+                                id="artist_id"
+                                v-model="artist.artist"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                          <label
+                            for="studio"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Studio
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="text"
+                                name="studio"
+                                id="studio"
+                                v-model="artist.studio"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
 
                         <div class="sm:col-span-4">
                           <label
@@ -82,19 +190,52 @@
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div class="text-sm text-gray-500">
-                        <ul>
-                          <li>number_of_tracks: {{ artist.number_of_tracks }}</li>
-                          <li>year: {{ artist.year }}</li>
-                          <li>album_art: {{ artist.album_art }}</li>
-                          <li>artist: {{ artist.artist.name }}</li>
-                          <li>studio: {{ artist.studio }}</li>
-                          <li>genre: {{ artist.genre }}</li>
-                          <li>sort_order: {{ artist.sort_order }}</li>
-                          <li>status: {{ artist.status }}</li>
-                        </ul>
+                        <div class="sm:col-span-4">
+                          <label
+                            for="sort_order"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Sort Order
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <input
+                                type="number"
+                                name="sort_order"
+                                id="sort_order"
+                                v-model="artist.sort_order"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                          <label
+                            for="status"
+                            class="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Status
+                          </label>
+                          <div class="mt-2">
+                            <div
+                              class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
+                            >
+                              <select
+                                name="status"
+                                id="status"
+                                v-model="artist.status"
+                                class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              >
+                                <option :value="true">Published</option>
+                                <option :value="false">Unpublished</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -103,7 +244,7 @@
                   <RouterLink
                     type="button"
                     class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
-                    to="/admin/artist"
+                    to="/admin/album"
                     ref="cancelButtonRef"
                   >
                     Back
@@ -123,14 +264,12 @@
     </Dialog>
   </TransitionRoot>
 </template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const open = ref(true)
-
 const router = useRouter()
 const route = useRoute()
 
@@ -140,17 +279,13 @@ const artist = ref({
   number_of_tracks: '',
   year: '',
   album_art: '',
-  artist: {
-    id: '',
-    name: ''
-  },
+  artist: null,
   studio: '',
   genre: '',
   sort_order: '',
   status: true
 })
 
-// Fetch the artist data from the API
 const fetchArtist = async () => {
   try {
     const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/artists/?id=${route.params.id}`)
@@ -165,7 +300,6 @@ onMounted(() => {
   fetchArtist()
 })
 
-// Save the artist data to the API
 const saveArtist = async () => {
   try {
     const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/artists/?id=${artist.value.id}`, {
@@ -183,3 +317,7 @@ const saveArtist = async () => {
   }
 }
 </script>
+
+<style scoped>
+/* Add your styles here */
+</style>
