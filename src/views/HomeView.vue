@@ -37,30 +37,18 @@
               </div>
               <div class="mt-5 sm:mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <RouterLink
-                  to="/admin/album"
+                  to="/admin/Signup"
                   class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
                 >
-                  Albums
+                  Sign Up
                 </RouterLink>
                 <RouterLink
                   to="/admin/artist"
                   class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
                 >
-                  Artists
+                  Log In
                 </RouterLink>
-                <RouterLink
-                  to="/admin/genre"
-                  class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
-                >
-                  Genres
-                </RouterLink>
-                
-                <RouterLink
-                  to="/admin/track"
-                  class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm"
-                >
-                  Tracks
-                </RouterLink>
+               
               </div>
             </DialogPanel>
           </TransitionChild>
