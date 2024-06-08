@@ -155,7 +155,7 @@ const editedSong = ref({
 // Fetch the song data from the API
 const fetchSong = async () => {
   try {
-    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/songs/?id=${route.params.id}`)
+    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/tracks/?id=${route.params.id}`)
     const data = await response.json()
     song.value = data.body
     // Set the editedSong values to match the fetched data
