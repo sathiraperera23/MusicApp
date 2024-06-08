@@ -107,10 +107,14 @@ const mobileMenuOpen = ref(false)
        
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-          >Log in <span aria-hidden="true">&rarr;</span></a
+        <RouterLink to="/admin/SignUp" class="text-sm font-semibold leading-6 text-gray-900"
+          >Sign Up</RouterLink
+        >
+        <RouterLink to="/admin/Login" class="text-sm font-semibold leading-6 text-gray-900"
+          >Login</RouterLink
         >
       </div>
+      
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-10" />

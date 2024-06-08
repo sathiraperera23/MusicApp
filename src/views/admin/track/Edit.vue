@@ -189,7 +189,7 @@ const saveChanges = async () => {
   formData.append('status', editedSong.value.status)
 
   try {
-    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/songs/${route.params.id}`, {
+    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/tracks/${route.params.id}`, {
       method: 'PUT',
       body: formData
     })
