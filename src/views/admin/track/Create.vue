@@ -27,55 +27,49 @@
             <DialogPanel class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
               <form v-on:submit.prevent="saveSong">
                 <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+                  <!-- Input fields -->
                   <div class="sm:col-span-8">
                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
                     <div class="mt-2">
                       <input type="text" name="name" id="name" v-model="song.name" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="file" class="block text-sm font-medium leading-6 text-gray-900">File Path</label>
                     <div class="mt-2">
                       <input type="text" name="file" id="file" v-model="song.file" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="genre" class="block text-sm font-medium leading-6 text-gray-900">Genre</label>
                     <div class="mt-2">
                       <input type="number" name="genre" id="genre" v-model="song.genre" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="duration" class="block text-sm font-medium leading-6 text-gray-900">Duration</label>
                     <div class="mt-2">
                       <input type="number" name="duration" id="duration" v-model="song.duration" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="artist" class="block text-sm font-medium leading-6 text-gray-900">Artist</label>
                     <div class="mt-2">
                       <input type="number" name="artist" id="artist" v-model="song.artist" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="album" class="block text-sm font-medium leading-6 text-gray-900">Album</label>
                     <div class="mt-2">
                       <input type="number" name="album" id="album" v-model="song.album" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="sort_order" class="block text-sm font-medium leading-6 text-gray-900">Sort Order</label>
                     <div class="mt-2">
                       <input type="number" name="sort_order" id="sort_order" v-model="song.sort_order" class="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
                   </div>
-
                   <div class="sm:col-span-8">
                     <label for="status" class="block text-sm font-medium leading-6 text-gray-900">Status</label>
                     <div class="mt-2">

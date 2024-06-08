@@ -78,7 +78,7 @@ const track = ref(null)
 // Fetch the track data from the API
 const fetchTrack = async () => {
   try {
-    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/tracks/${route.params.id}`)
+    const response = await fetch(`https://tft9n9vry9.execute-api.ap-southeast-1.amazonaws.com/Stage1/tracks/?id=${route.params.id}`)
     const data = await response.json()
     console.log('Fetched track data:', data.body) // Debugging line to check API response
     track.value = data.body[0] // Assuming API returns a single track object
