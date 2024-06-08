@@ -28,46 +28,21 @@
               <div>
                 <div class="mt-3 sm:mt-5">
                   <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
-                    Create a new account
+                    Log in to your account
                   </DialogTitle>
                   <div class="mt-2">
-                    <form @submit.prevent="handleSignup" class="space-y-6">
+                    <form @submit.prevent="handleLogin" class="space-y-6">
                       <div class="rounded-md shadow-sm -space-y-px">
-                        <div>
-                          <label for="first_name" class="sr-only">First Name</label>
-                          <input
-                            id="first_name"
-                            name="first_name"
-                            type="text"
-                            required
-                            v-model="first_name"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="First Name"
-                          />
-                          <p v-if="errors.first_name" class="text-red-600 text-sm">{{ errors.first_name }}</p>
-                        </div>
-                        <div>
-                          <label for="last_name" class="sr-only">Last Name</label>
-                          <input
-                            id="last_name"
-                            name="last_name"
-                            type="text"
-                            required
-                            v-model="last_name"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Last Name"
-                          />
-                          <p v-if="errors.last_name" class="text-red-600 text-sm">{{ errors.last_name }}</p>
-                        </div>
                         <div>
                           <label for="email" class="sr-only">Email address</label>
                           <input
                             id="email"
                             name="email"
                             type="email"
+                            autocomplete="email"
                             required
                             v-model="email"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                             placeholder="Email address"
                           />
                           <p v-if="errors.email" class="text-red-600 text-sm">{{ errors.email }}</p>
@@ -78,64 +53,13 @@
                             id="password"
                             name="password"
                             type="password"
+                            autocomplete="current-password"
                             required
                             v-model="password"
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                             placeholder="Password"
                           />
                           <p v-if="errors.password" class="text-red-600 text-sm">{{ errors.password }}</p>
-                        </div>
-                        <div>
-                          <label for="age" class="sr-only">Age</label>
-                          <input
-                            id="age"
-                            name="age"
-                            type="number"
-                            required
-                            v-model="age"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Age"
-                          />
-                          <p v-if="errors.age" class="text-red-600 text-sm">{{ errors.age }}</p>
-                        </div>
-                        <div>
-                          <label for="country" class="sr-only">Country</label>
-                          <input
-                            id="country"
-                            name="country"
-                            type="text"
-                            required
-                            v-model="country"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Country"
-                          />
-                          <p v-if="errors.country" class="text-red-600 text-sm">{{ errors.country }}</p>
-                        </div>
-                        <div>
-                          <label for="subscription" class="sr-only">Subscription</label>
-                          <input
-                            id="subscription"
-                            name="subscription"
-                            type="text"
-                            required
-                            v-model="subscription"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Subscription"
-                          />
-                          <p v-if="errors.subscription" class="text-red-600 text-sm">{{ errors.subscription }}</p>
-                        </div>
-                        <div>
-                          <label for="phone" class="sr-only">Phone</label>
-                          <input
-                            id="phone"
-                            name="phone"
-                            type="text"
-                            required
-                            v-model="phone"
-                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                            placeholder="Phone"
-                          />
-                          <p v-if="errors.phone" class="text-red-600 text-sm">{{ errors.phone }}</p>
                         </div>
                       </div>
 
@@ -144,7 +68,7 @@
                           type="submit"
                           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                          Sign up
+                          Sign in
                         </button>
                       </div>
                     </form>
@@ -155,8 +79,7 @@
                 <RouterLink
                   type="button"
                   class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
-                  to="/views/admin"
-                  ref="cancelButtonRef"
+                  to="/view/admin"
                 >
                   Close
                 </RouterLink>
@@ -174,87 +97,56 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 import { useRouter } from 'vue-router'
 
 const open = ref(true)
-const first_name = ref('')
-const last_name = ref('')
 const email = ref('')
 const password = ref('')
-const age = ref('')
-const country = ref('')
-const subscription = ref('')
-const phone = ref('')
 const errors = ref({})
 
 const router = useRouter()
 
-const handleSignup = async () => {
-  errors.value = {}
+const validate = () => {
+  const newErrors = {}
 
-  if (!first_name.value) {
-    errors.value.first_name = 'First name is required'
-  }
-  if (!last_name.value) {
-    errors.value.last_name = 'Last name is required'
-  }
-  if (!email.value) {
-    errors.value.email = 'Email is required'
-  } else if (!validateEmail(email.value)) {
-    errors.value.email = 'Invalid email address'
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!email.value || !emailPattern.test(email.value)) {
+    newErrors.email = 'Valid email is required.'
   }
   if (!password.value) {
-    errors.value.password = 'Password is required'
-  }
-  if (!age.value) {
-    errors.value.age = 'Age is required'
-  }
-  if (!country.value) {
-    errors.value.country = 'Country is required'
-  }
-  if (!subscription.value) {
-    errors.value.subscription = 'Subscription is required'
-  }
-  if (!phone.value) {
-    errors.value.phone = 'Phone is required'
+    newErrors.password = 'Password is required.'
+  } else if (password.value.length < 6) {
+    newErrors.password = 'Password must be at least 6 characters.'
   }
 
-  if (Object.keys(errors.value).length === 0) {
+  errors.value = newErrors
+  return Object.keys(newErrors).length === 0
+}
+
+const handleLogin = async () => {
+  if (validate()) {
     try {
-      // Replace with your signup API endpoint
-      const response = await fetch('https://your-api-endpoint.com/signup', {
+      const response = await fetch('https://your-api-endpoint.com/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          first_name: first_name.value,
-          last_name: last_name.value,
           email: email.value,
           password: password.value,
-          age: age.value,
-          country: country.value,
-          subscription: subscription.value,
-          phone: phone.value
-        })
+        }),
       })
 
       const data = await response.json()
 
-      if (response.ok) {
-        console.log('Signup successful:', data)
-        router.push('/dashboard') // Redirect to the dashboard after signup
-      } else {
-        console.error('Signup error:', data)
-        errors.value.general = data.message || 'Signup failed'
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to log in.')
       }
+
+      console.log('Login successful:', data)
+      router.push('/dashboard') // Redirect to the dashboard after login
     } catch (error) {
-      console.error('Signup error:', error)
-      errors.value.general = 'An error occurred while trying to sign up'
+      console.error('Error logging in:', error)
+      errors.value.general = error.message || 'An error occurred while trying to log in.'
     }
   }
-}
-
-const validateEmail = (email) => {
-  const re = /^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,})$/
-  return re.test(String(email).toLowerCase())
 }
 </script>
 
